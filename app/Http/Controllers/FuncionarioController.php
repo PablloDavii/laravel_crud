@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Funcionario;
-
+use App\Http\Requests\StoreUpdateSupport;
 
 class FuncionarioController extends Controller
 {
@@ -27,7 +27,7 @@ class FuncionarioController extends Controller
         return view('funcionario_create');
     }
 
-    public function store(Request $request)
+    public function store(StoreUpdateSupport $request)
     {
         $created = $this->funcionario->create([
             'nome' => $request->input('nome'),
